@@ -84,12 +84,13 @@ struct MenuBarView: View {
                 } label: {
                     Image(systemName: "gearshape")
                 }
-                .buttonStyle(.borderless)
+                .hueGlassIconButtonStyle()
+                .accessibilityLabel("Settings")
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
 
-            Divider()
+            HeaderDivider()
 
             // Content
             if hasMultipleBridges {
@@ -116,7 +117,9 @@ struct MenuBarView: View {
                     }
                 }
                 .padding(.vertical, 8)
+                .hueGlassContainer(spacing: 12)
             }
+            .hueScrollEdge()
         }
     }
 
@@ -295,7 +298,9 @@ struct MenuBarView: View {
                         }
                     }
                     .padding(.vertical, 8)
+                    .hueGlassContainer(spacing: 12)
                 }
+                .hueScrollEdge()
             }
         } else {
             Spacer()
